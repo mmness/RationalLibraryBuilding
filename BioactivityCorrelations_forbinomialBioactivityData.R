@@ -14,7 +14,7 @@ node<-as.data.frame(cbind(node$cluster.index, node$ID))
 colnames(node)<-c("cluster.index", "ID")
 
 colnames(bucket)<-sub("X.OTU.ID", "cluster.index", colnames(bucket))
-bucket<-merge(node, bucket, by="cluster.index", all=FALSE)  ##change to all=TRUE once this issue gets worked out
+bucket<-merge(node, bucket, by="cluster.index", all=FALSE) 
 
 bucket <- bucket[, -which(names(bucket) == "cluster.index")]
 t_buck <- as.data.frame(t(as.matrix(bucket)))
